@@ -53,9 +53,9 @@ class MyCity(City):
     def __init__(self, name, lat, lon):
         super().__init__(name, lat, lon)
 
-    def cityreader(self, lat, lon):
-        pass
-    
+    def cityreader_s(self, lat, lon):
+        for c in cities:
+            print(c.name)    
 
 # Be aware that the user could specify either a lower-left/upper-right pair of
 # coordinates, or an upper-left/lower-right pair of coordinates. Hint: normalize
@@ -79,12 +79,18 @@ class MyCity(City):
 
 # TODO Get latitude and longitude values from the user
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+within = []
+
+def cityreader_stretch(lat1=None, lon1=None, lat2=None, lon2=None, cities=[]):
   # within will hold the cities that fall within the specified region
-  within = []
+  
+    for c in cities:
+        within.append(City(row[0], row[3], row[4]))
 
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
 
-  return within
+    return within
+
+
