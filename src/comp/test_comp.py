@@ -3,7 +3,7 @@ from comp import *
 
 def compare_humans(inp, exp):
   if len(inp) != len(exp):
-    return False
+    return False 
   for i in range(len(inp)):
     if inp[i].name != exp[i].name:
       return False
