@@ -48,7 +48,15 @@ for c in cities:
 # with the `cities` list that holds all the City instances from the `cityreader`
 # function. This function should output all the cities that fall within the 
 # coordinate square.
-#
+
+class MyCity(City):
+    def __init__(self, name, lat, lon):
+        super().__init__(name, lat, lon)
+
+    def cityreader(self, lat, lon):
+        pass
+    
+
 # Be aware that the user could specify either a lower-left/upper-right pair of
 # coordinates, or an upper-left/lower-right pair of coordinates. Hint: normalize
 # the input data so that it's always one or the other, then search for cities.
