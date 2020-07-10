@@ -22,6 +22,11 @@ class City:
 # should not be loaded into a City object.
 cities = []
 
+with open('/Lambda/git/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        cities.append(City(row[0], row[3], row[4]))
+
 def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
@@ -33,7 +38,7 @@ cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c)
+    print(c.name, c.lat, c.lon)
 
 # STRETCH GOAL!
 #
